@@ -1,0 +1,17 @@
+Run on VM1
+ifconfig
+get ip of VM1 
+
+Run on Vm2
+touch test.txt
+nano test.txt 
+write some content
+ctrl+s and ctrl+x
+
+scp test.txt vagrant@ipaddofVM1 :/home/vagrant
+pass
+
+
+
+
+

@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Student CGPA Calculator</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(135deg,#1f4037,#99f2c8);
+}
+
+.container{
+    width:420px;
+    padding:30px;
+    border-radius:25px;
+    background:rgba(255,255,255,0.12);
+    backdrop-filter:blur(14px);
+    box-shadow:0 8px 32px rgba(0,0,0,0.3);
+    color:white;
+}
+
+.title{
+    text-align:center;
+    margin-bottom:25px;
+}
+
+.title h1{
+    font-size:30px;
+    font-weight:700;
+}
+
+.input-group{
+    margin-bottom:18px;
+}
+
+label{
+    display:block;
+    margin-bottom:8px;
+    font-size:15px;
+}
+
+input{
+    width:100%;
+    padding:12px;
+    border:none;
+    outline:none;
+    border-radius:12px;
+    background:rgba(255,255,255,0.2);
+    color:white;
+    font-size:16px;
+}
+
+input::placeholder{
+    color:#eee;
+}
+
+button{
+    width:100%;
+    padding:14px;
+    border:none;
+    border-radius:12px;
+    background:#00c6ff;
+    color:white;
+    font-size:17px;
+    cursor:pointer;
+    transition:0.3s;
+    font-weight:600;
+    margin-top:10px;
+}
+
+button:hover{
+    background:#0072ff;
+    transform:scale(1.02);
+}
+
+.result{
+    margin-top:25px;
+    text-align:center;
+    padding:20px;
+    border-radius:15px;
+    background:rgba(255,255,255,0.15);
+}
+
+.result h2{
+    margin-top:10px;
+    font-size:35px;
+    color:#00ffcc;
+}
+
+.footer{
+    margin-top:20px;
+    text-align:center;
+    font-size:13px;
+    color:#eee;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="title">
+        <h1>CGPA Calculator</h1>
+    </div>
+
+    <div class="input-group">
+        <label>Subject 1 Marks</label>
+        <input type="number" id="sub1" placeholder="Enter marks">
+    </div>
+
+    <div class="input-group">
+        <label>Subject 2 Marks</label>
+        <input type="number" id="sub2" placeholder="Enter marks">
+    </div>
+
+    <div class="input-group">
+        <label>Subject 3 Marks</label>
+        <input type="number" id="sub3" placeholder="Enter marks">
+    </div>
+
+    <div class="input-group">
+        <label>Subject 4 Marks</label>
+        <input type="number" id="sub4" placeholder="Enter marks">
+    </div>
+
+    <div class="input-group">
+        <label>Subject 5 Marks</label>
+        <input type="number" id="sub5" placeholder="Enter marks">
+    </div>
+
+    <button onclick="calculateCGPA()">
+        Calculate CGPA
+    </button>
+
+    <div class="result">
+        <p>Your CGPA</p>
+        <h2 id="cgpa">0.00</h2>
+    </div>
+
+    <div class="footer">
+        Student CGPA Calculator
+    </div>
+
+</div>
+
+<script>
+
+function getGradePoint(mark){
+
+    if(mark >= 90)
+        return 10;
+
+    else if(mark >= 80)
+        return 9;
+
+    else if(mark >= 70)
+        return 8;
+
+    else if(mark >= 60)
+        return 7;
+
+    else if(mark >= 50)
+        return 6;
+
+    else if(mark >= 40)
+        return 5;
+
+    else
+        return 0;
+}
+
+function calculateCGPA(){
+
+    let s1 =
+        parseFloat(document.getElementById("sub1").value) || 0;
+
+    let s2 =
+        parseFloat(document.getElementById("sub2").value) || 0;
+
+    let s3 =
+        parseFloat(document.getElementById("sub3").value) || 0;
+
+    let s4 =
+        parseFloat(document.getElementById("sub4").value) || 0;
+
+    let s5 =
+        parseFloat(document.getElementById("sub5").value) || 0;
+
+    let gp1 = getGradePoint(s1);
+    let gp2 = getGradePoint(s2);
+    let gp3 = getGradePoint(s3);
+    let gp4 = getGradePoint(s4);
+    let gp5 = getGradePoint(s5);
+
+    let cgpa =
+        (gp1 + gp2 + gp3 + gp4 + gp5) / 5;
+
+    document.getElementById("cgpa").innerHTML =
+        cgpa.toFixed(2);
+
+}
+
+</script>
+
+</body>
+</html>

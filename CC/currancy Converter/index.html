@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Currency Converter</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(135deg,#1d4350,#a43931);
+}
+
+.container{
+    width:400px;
+    padding:30px;
+    border-radius:25px;
+    background:rgba(255,255,255,0.1);
+    backdrop-filter:blur(12px);
+    box-shadow:0 8px 32px rgba(0,0,0,0.3);
+    color:white;
+}
+
+.title{
+    text-align:center;
+    margin-bottom:25px;
+}
+
+.title h1{
+    font-size:32px;
+    font-weight:700;
+}
+
+.input-group{
+    margin-bottom:20px;
+}
+
+label{
+    display:block;
+    margin-bottom:8px;
+    font-size:15px;
+}
+
+input,select{
+    width:100%;
+    padding:12px;
+    border:none;
+    outline:none;
+    border-radius:12px;
+    background:rgba(255,255,255,0.2);
+    color:white;
+    font-size:16px;
+}
+
+select option{
+    color:black;
+}
+
+.convert-icon{
+    text-align:center;
+    font-size:28px;
+    margin:15px 0;
+}
+
+button{
+    width:100%;
+    padding:14px;
+    border:none;
+    border-radius:12px;
+    background:#00c6ff;
+    color:white;
+    font-size:17px;
+    cursor:pointer;
+    transition:0.3s;
+    font-weight:600;
+}
+
+button:hover{
+    background:#0072ff;
+    transform:scale(1.02);
+}
+
+.result{
+    margin-top:25px;
+    text-align:center;
+    padding:18px;
+    border-radius:15px;
+    background:rgba(255,255,255,0.15);
+}
+
+.result h2{
+    font-size:28px;
+    margin-top:10px;
+    color:#00ffcc;
+}
+
+.footer{
+    margin-top:20px;
+    text-align:center;
+    font-size:13px;
+    color:#ddd;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="title">
+        <h1>Currency Converter</h1>
+    </div>
+
+    <div class="input-group">
+        <label>Amount</label>
+        <input type="number" id="amount" placeholder="Enter amount">
+    </div>
+
+    <div class="input-group">
+        <label>From Currency</label>
+        <select id="from">
+            <option value="USD">USD - US Dollar</option>
+            <option value="INR">INR - Indian Rupee</option>
+            <option value="EUR">EUR - Euro</option>
+            <option value="GBP">GBP - British Pound</option>
+        </select>
+    </div>
+
+    <div class="convert-icon">
+        ⇅
+    </div>
+
+    <div class="input-group">
+        <label>To Currency</label>
+        <select id="to">
+            <option value="INR">INR - Indian Rupee</option>
+            <option value="USD">USD - US Dollar</option>
+            <option value="EUR">EUR - Euro</option>
+            <option value="GBP">GBP - British Pound</option>
+        </select>
+    </div>
+
+    <button onclick="convertCurrency()">
+        Convert Currency
+    </button>
+
+    <div class="result">
+        <p>Converted Amount</p>
+        <h2 id="result">0.00</h2>
+    </div>
+
+    <div class="footer">
+        Currency Converter Application
+    </div>
+
+</div>
+
+<script>
+
+function convertCurrency(){
+
+    let amount =
+        parseFloat(document.getElementById("amount").value);
+
+    let from =
+        document.getElementById("from").value;
+
+    let to =
+        document.getElementById("to").value;
+
+    if(!amount || amount<=0){
+        alert("Please enter valid amount");
+        return;
+    }
+
+    // Dummy Exchange Rates
+
+    const rates = {
+
+        USD:{
+            INR:83.2,
+            EUR:0.92,
+            GBP:0.78,
+            USD:1
+        },
+
+        INR:{
+            USD:0.012,
+            EUR:0.011,
+            GBP:0.0094,
+            INR:1
+        },
+
+        EUR:{
+            USD:1.08,
+            INR:90.5,
+            GBP:0.85,
+            EUR:1
+        },
+
+        GBP:{
+            USD:1.27,
+            INR:106.4,
+            EUR:1.17,
+            GBP:1
+        }
+
+    };
+
+    let converted =
+        amount * rates[from][to];
+
+    document.getElementById("result").innerHTML =
+        converted.toFixed(2) + " " + to;
+
+}
+
+</script>
+
+</body>
+</html>

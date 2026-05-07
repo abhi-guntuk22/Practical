@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Online Quiz Application</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(135deg,#141e30,#243b55);
+}
+
+.quiz-container{
+    width:450px;
+    background:rgba(255,255,255,0.1);
+    backdrop-filter:blur(12px);
+    border-radius:25px;
+    padding:30px;
+    color:white;
+    box-shadow:0 8px 32px rgba(0,0,0,0.3);
+}
+
+.title{
+    text-align:center;
+    margin-bottom:25px;
+}
+
+.title h1{
+    font-size:32px;
+    font-weight:700;
+}
+
+.question-box{
+    margin-bottom:25px;
+}
+
+.question-box h2{
+    font-size:22px;
+    line-height:1.5;
+}
+
+.options{
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+}
+
+.option{
+    background:rgba(255,255,255,0.15);
+    padding:14px;
+    border-radius:12px;
+    cursor:pointer;
+    transition:0.3s;
+    border:2px solid transparent;
+}
+
+.option:hover{
+    background:rgba(255,255,255,0.25);
+    transform:translateY(-2px);
+}
+
+.option.selected{
+    border:2px solid #00e5ff;
+    background:rgba(0,229,255,0.2);
+}
+
+button{
+    width:100%;
+    padding:14px;
+    border:none;
+    border-radius:12px;
+    margin-top:25px;
+    background:#00c6ff;
+    color:white;
+    font-size:17px;
+    cursor:pointer;
+    transition:0.3s;
+    font-weight:600;
+}
+
+button:hover{
+    background:#0072ff;
+    transform:scale(1.02);
+}
+
+.result{
+    text-align:center;
+    margin-top:25px;
+    font-size:24px;
+    font-weight:600;
+    color:#00ffcc;
+}
+
+.footer{
+    margin-top:20px;
+    text-align:center;
+    color:#ddd;
+    font-size:13px;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="quiz-container">
+
+    <div class="title">
+        <h1>Online Quiz</h1>
+    </div>
+
+    <div class="question-box">
+        <h2 id="question">1. What does HTML stand for?</h2>
+    </div>
+
+    <div class="options">
+
+        <div class="option" onclick="selectOption(this,'a')">
+            a) Hyper Text Markup Language
+        </div>
+
+        <div class="option" onclick="selectOption(this,'b')">
+            b) High Transfer Machine Language
+        </div>
+
+        <div class="option" onclick="selectOption(this,'c')">
+            c) Hyperlinks and Text Machine Language
+        </div>
+
+        <div class="option" onclick="selectOption(this,'d')">
+            d) Home Tool Markup Language
+        </div>
+
+    </div>
+
+    <button onclick="nextQuestion()">
+        Next Question
+    </button>
+
+    <div class="result" id="result"></div>
+
+    <div class="footer">
+        Online Quiz Application
+    </div>
+
+</div>
+
+<script>
+
+const quiz = [
+
+{
+    question:"1. What does HTML stand for?",
+    options:[
+        "Hyper Text Markup Language",
+        "High Transfer Machine Language",
+        "Hyperlinks and Text Machine Language",
+        "Home Tool Markup Language"
+    ],
+    answer:"a"
+},
+
+{
+    question:"2. Which language is used for styling web pages?",
+    options:[
+        "HTML",
+        "JQuery",
+        "CSS",
+        "XML"
+    ],
+    answer:"c"
+},
+
+{
+    question:"3. Which language is used for web development?",
+    options:[
+        "Python",
+        "JavaScript",
+        "C",
+        "Both Python and JavaScript"
+    ],
+    answer:"d"
+},
+
+{
+    question:"4. Which company developed Java?",
+    options:[
+        "Sun Microsystems",
+        "Google",
+        "Microsoft",
+        "Apple"
+    ],
+    answer:"a"
+},
+
+{
+    question:"5. Which tag is used to insert image in HTML?",
+    options:[
+        "<img>",
+        "<image>",
+        "<pic>",
+        "<src>"
+    ],
+    answer:"a"
+}
+
+];
+
+let currentQuestion = 0;
+let selected = "";
+let score = 0;
+
+function selectOption(element,option){
+
+    let options = document.querySelectorAll(".option");
+
+    options.forEach(opt=>{
+        opt.classList.remove("selected");
+    });
+
+    element.classList.add("selected");
+
+    selected = option;
+}
+
+function nextQuestion(){
+
+    if(selected===""){
+        alert("Please select an option");
+        return;
+    }
+
+    if(selected===quiz[currentQuestion].answer){
+        score++;
+    }
+
+    currentQuestion++;
+
+    if(currentQuestion===quiz.length){
+
+        document.querySelector(".quiz-container").innerHTML = `
+        
+        <div class="title">
+            <h1>Quiz Completed 🎉</h1>
+        </div>
+
+        <div class="result">
+            Your Score: ${score} / ${quiz.length}
+        </div>
+
+        <button onclick="location.reload()">
+            Restart Quiz
+        </button>
+
+        `;
+
+        return;
+    }
+
+    loadQuestion();
+
+}
+
+function loadQuestion(){
+
+    selected="";
+
+    document.getElementById("question").innerHTML =
+        quiz[currentQuestion].question;
+
+    let optionElements = document.querySelectorAll(".option");
+
+    optionElements.forEach((opt,index)=>{
+
+        let labels = ["a","b","c","d"];
+
+        opt.classList.remove("selected");
+
+        opt.innerHTML =
+            `${labels[index]}) ${quiz[currentQuestion].options[index]}`;
+
+        opt.setAttribute(
+            "onclick",
+            `selectOption(this,'${labels[index]}')`
+        );
+
+    });
+
+}
+
+</script>
+
+</body>
+</html>
