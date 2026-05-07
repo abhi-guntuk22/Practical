@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Registration</title>
+
+  <style>
+    body {
+      font-family: Arial;
+      background-color: #f2f2f2;
+    }
+    .container {
+      width: 350px;
+      margin: 50px auto;
+      padding: 20px;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0px 0px 10px gray;
+    }
+    input {
+      width: 100%;
+      padding: 8px;
+      margin: 8px 0;
+    }
+    button {
+      width: 100%;
+      padding: 10px;
+      background-color: blue;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: darkblue;
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="container">
+  <h2>User Registration</h2>
+
+  <input type="text" id="fname" placeholder="First Name" required>
+  <input type="text" id="lname" placeholder="Last Name" required>
+
+  <input type="date" id="dob">
+
+  <label>Gender:</label><br>
+  <input type="radio" name="gender" value="Male"> Male
+  <input type="radio" name="gender" value="Female"> Female
+  <input type="radio" name="gender" value="Other"> Other
+  <br><br>
+
+  <input type="text" id="mobile" placeholder="Enter 10 digit mobile number">
+  <input type="email" id="email" placeholder="Enter Email">
+
+  <button id="submit-btn">Register</button>
+</div>
+
+<script>
+document.getElementById("submit-btn").addEventListener("click", () => {
+
+  const fname = document.getElementById("fname").value.trim();
+  const lname = document.getElementById("lname").value.trim();
+  const dob = document.getElementById("dob").value;
+  const mobile = document.getElementById("mobile").value.trim();
+  const email = document.getElementById("email");
+
+  const genderInput = document.querySelector('input[name="gender"]:checked');
+
+  // Validations
+  if(fname === "" || lname === ""){
+    alert("Enter first and last name");
+    return;
+  }
+
+  if(!genderInput){
+    alert("Select gender");
+    return;
+  }
+
+  if(!/^\d{10}$/.test(mobile)){
+    alert("Mobile number must be exactly 10 digits");
+    return;
+  }
+
+  if(!email.checkValidity()){
+    alert("Enter valid email");
+    return;
+  }
+
+  const user = {
+    fname,
+    lname,
+    dob,
+    gender: genderInput.value,
+    mobile,
+    email: email.value
+  };
+
+  const users = JSON.parse(localStorage.getItem("users")) || [];
+  users.push(user);
+  localStorage.setItem("users", JSON.stringify(users));
+
+  alert("Registration Successful");
+  window.location.href = "Display.html";
+});
+</script>
+
+</body>
+</html>

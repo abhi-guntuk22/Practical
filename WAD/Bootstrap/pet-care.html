@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Paws Pet Care</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+    <style>
+
+        body{
+            font-family: Arial, sans-serif;
+            background-color: #f4f9f9;
+        }
+
+        /* Header Section */
+        .hero{
+            background-color: #6ec6ca;
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .hero h1{
+            font-size: 50px;
+            font-weight: bold;
+        }
+
+        .hero p{
+            font-size: 20px;
+        }
+
+        /* Service Cards */
+        .service-card{
+            transition: transform 0.3s;
+        }
+
+        .service-card:hover{
+            transform: scale(1.05);
+        }
+
+        /* Footer */
+        footer{
+            background-color: #343a40;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            margin-top: 30px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+
+            <a class="navbar-brand" href="#">
+                🐾 Happy Paws Pet Care
+            </a>
+
+            <button class="navbar-toggler" type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav">
+
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+
+                <ul class="navbar-nav ms-auto">
+
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">Home</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#services">Services</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <section class="hero">
+        <h1>Welcome to Happy Paws Pet Care</h1>
+        <p>We Care for Your Pets Like Family ❤️</p>
+    </section>
+
+    <!-- Services Section -->
+    <section class="container mt-5" id="services">
+
+        <h2 class="text-center mb-4">Our Services</h2>
+
+        <div class="row">
+
+            <!-- Service 1 -->
+            <div class="col-md-4 mb-4">
+                <div class="card service-card shadow">
+
+                    <img src="https://images.unsplash.com/photo-1517849845537-4d257902454a"
+                    class="card-img-top"
+                    height="250">
+
+                    <div class="card-body text-center">
+
+                        <h4>Pet Grooming</h4>
+
+                        <p>
+                            Professional grooming services for dogs and cats.
+                        </p>
+
+                        <i class="bi bi-scissors fs-1 text-primary"></i>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Service 2 -->
+            <div class="col-md-4 mb-4">
+                <div class="card service-card shadow">
+
+                    <img src="https://images.unsplash.com/photo-1583511655857-d19b40a7a54e"
+                    class="card-img-top"
+                    height="250">
+
+                    <div class="card-body text-center">
+
+                        <h4>Veterinary Care</h4>
+
+                        <p>
+                            Expert doctors available for pet health checkups.
+                        </p>
+
+                        <i class="bi bi-heart-pulse fs-1 text-danger"></i>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Service 3 -->
+            <div class="col-md-4 mb-4">
+                <div class="card service-card shadow">
+
+                    <img src="https://images.unsplash.com/photo-1518791841217-8f162f1e1131"
+                    class="card-img-top"
+                    height="250">
+
+                    <div class="card-body text-center">
+
+                        <h4>Pet Training</h4>
+
+                        <p>
+                            Behavioral and obedience training for pets.
+                        </p>
+
+                        <i class="bi bi-award fs-1 text-success"></i>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Contact Button -->
+    <section class="text-center mt-5" id="contact">
+
+        <button class="btn btn-lg btn-primary"
+        onclick="showContact()">
+
+            Contact Us
+
+        </button>
+
+    </section>
+
+    <!-- Contact Info -->
+    <div class="container text-center mt-4">
+
+        <div id="contactInfo"></div>
+
+    </div>
+
+    <!-- Footer -->
+    <footer>
+
+        <p>
+            © 2026 Happy Paws Pet Care | All Rights Reserved
+        </p>
+
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+
+        function showContact(){
+
+            document.getElementById("contactInfo").innerHTML = `
+                <div class="alert alert-success">
+                    <h4>Contact Us</h4>
+                    <p>Email: happypaws@gmail.com</p>
+                    <p>Phone: +91 9876543210</p>
+                    <p>Address: Nashik, Maharashtra</p>
+                </div>
+            `;
+        }
+
+    </script>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

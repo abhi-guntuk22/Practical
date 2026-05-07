@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Department App</title>
+
+  <!-- jQuery + jQuery Mobile CDN -->
+  <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+  <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+  <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+  <style>
+    /* Custom 5-column grid */
+    .five-col-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 2%;
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- HOME PAGE -->
+<div data-role="page" id="home">
+  <div data-role="header">
+    <h1>Departments</h1>
+  </div>
+
+  <div data-role="content">
+    <div class="five-col-grid">
+
+      <a href="#comp" class="ui-btn ui-btn-b">Computer</a>
+      <a href="#it" class="ui-btn ui-btn-b">IT</a>
+      <a href="#mech" class="ui-btn ui-btn-b">Mechanical</a>
+      <a href="#civil" class="ui-btn ui-btn-b">Civil</a>
+      <a href="#electrical" class="ui-btn ui-btn-b">Electrical</a>
+
+      <a href="#entc" class="ui-btn ui-btn-b">ENTC</a>
+      <a href="#ai" class="ui-btn ui-btn-b">AI</a>
+      <a href="#ds" class="ui-btn ui-btn-b">Data Science</a>
+      <a href="#chem" class="ui-btn ui-btn-b">Chemical</a>
+      <a href="#auto" class="ui-btn ui-btn-b">Automobile</a>
+
+    </div>
+  </div>
+</div>
+
+
+<!-- DEPARTMENT PAGES -->
+
+<div data-role="page" id="comp">
+  <div data-role="header">
+    <h1>Computer Dept</h1>
+  </div>
+  <div data-role="content">
+    <p>Focuses on programming, AI, and software development.</p>
+    <a href="#home" class="ui-btn">Back</a>
+  </div>
+</div>
+
+<div data-role="page" id="it">
+  <div data-role="header">
+    <h1>IT Dept</h1>
+  </div>
+  <div data-role="content">
+    <p>Focuses on networking, databases, and information systems.</p>
+    <a href="#home" class="ui-btn">Back</a>
+  </div>
+</div>
+
+<div data-role="page" id="mech">
+  <div data-role="header">
+    <h1>Mechanical Dept</h1>
+  </div>
+  <div data-role="content">
+    <p>Deals with machines, thermodynamics, and manufacturing.</p>
+    <a href="#home" class="ui-btn">Back</a>
+  </div>
+</div>
+
+<div data-role="page" id="civil">
+  <div data-role="header">
+    <h1>Civil Dept</h1>
+  </div>
+  <div data-role="content">
+    <p>Focuses on construction, structures, and infrastructure.</p>
+    <a href="#home" class="ui-btn">Back</a>
+  </div>
+</div>
+
+<div data-role="page" id="electrical">
+  <div data-role="header">
+    <h1>Electrical Dept</h1>
+  </div>
+  <div data-role="content">
+    <p>Focuses on circuits, power systems, and electronics.</p>
+    <a href="#home" class="ui-btn">Back</a>
+  </div>
+</div>
+
+<div data-role="page" id="entc">
+  <div data-role="header">
+    <h1>ENTC Dept</h1>
+  </div>
+  <div data-role="content">
+    <p>Electronics and Telecommunication engineering field.</p>
+    <a href="#home" class="ui-btn">Back</a>
+  </div>
+</div>
+
+<div data-role="page" id="ai">
+  <div data-role="header">
+    <h1>AI Dept</h1>
+  </div>
+  <div data-role="content">
+    <p>Artificial Intelligence and Machine Learning studies.</p>
+    <a href="#home" class="ui-btn">Back</a>
+  </div>
+</div>
+
+<div data-role="page" id="ds">
+  <div data-role="header">
+    <h1>Data Science Dept</h1>
+  </div>
+  <div data-role="content">
+    <p>Focuses on data analysis, ML, and big data.</p>
+    <a href="#home" class="ui-btn">Back</a>
+  </div>
+</div>
+
+<div data-role="page" id="chem">
+  <div data-role="header">
+    <h1>Chemical Dept</h1>
+  </div>
+  <div data-role="content">
+    <p>Deals with chemical processes and industries.</p>
+    <a href="#home" class="ui-btn">Back</a>
+  </div>
+</div>
+
+<div data-role="page" id="auto">
+  <div data-role="header">
+    <h1>Automobile Dept</h1>
+  </div>
+  <div data-role="content">
+    <p>Focuses on vehicle design and manufacturing.</p>
+    <a href="#home" class="ui-btn">Back</a>
+  </div>
+</div>
+
+</body>
+</html>

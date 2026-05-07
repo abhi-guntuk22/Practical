@@ -1,0 +1,13 @@
+for node problem stat
+npm I
+node server.js
+
+for angular
+npm i
+ng serve
+
+deployment
+
+npm install -g vercel
+vercel login
+vercel

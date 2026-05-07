@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Flight Booking Dashboard</title>
+
+<style>
+
+body{
+    margin:0;
+    font-family:Arial, sans-serif;
+    background:#eef7ff;
+}
+
+.navbar{
+    background:#0077b6;
+    color:white;
+    display:flex;
+    justify-content:space-between;
+    padding:15px 20px;
+    align-items:center;
+}
+
+.navbar input{
+    padding:8px;
+}
+
+.navbar button{
+    padding:8px 12px;
+    background:#ffb703;
+    border:none;
+}
+
+.flights{
+    display:flex;
+    gap:20px;
+    flex-wrap:wrap;
+    padding:20px;
+}
+
+.card{
+    background:white;
+    width:250px;
+    padding:20px;
+    border-radius:10px;
+    box-shadow:0px 0px 10px gray;
+}
+
+.card button{
+    padding:10px;
+    background:#0077b6;
+    color:white;
+    border:none;
+    cursor:pointer;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="navbar">
+
+    <h2>✈ Sky Travels</h2>
+
+    <div>
+        <input type="text" placeholder="Search Flights">
+        <button>Search</button>
+    </div>
+
+</div>
+
+<h2 style="padding-left:20px;">Available Flights</h2>
+
+<div class="flights">
+
+    <div class="card">
+
+        <h3>Mumbai → Delhi</h3>
+
+        <p>Price: ₹4500</p>
+
+        <button>Book Now</button>
+
+    </div>
+
+    <div class="card">
+
+        <h3>Pune → Bangalore</h3>
+
+        <p>Price: ₹5500</p>
+
+        <button>Book Now</button>
+
+    </div>
+
+    <div class="card">
+
+        <h3>Delhi → Goa</h3>
+
+        <p>Price: ₹6500</p>
+
+        <button>Book Now</button>
+
+    </div>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+    content="width=device-width, initial-scale=1.0">
+
+    <title>Movie Ticket Booking</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+
+        <h1>🎬 Movie Ticket Booking</h1>
+
+        <p>Book Your Favorite Movie Tickets Online</p>
+
+    </header>
+
+    <!-- Movie Cards -->
+    <div class="container">
+
+        <!-- Movie 1 -->
+        <div class="card">
+
+            <img src="https://images.unsplash.com/photo-1489599849927-2ee91cede3ba">
+
+            <h2>Avengers</h2>
+
+            <p>Price: ₹250</p>
+
+            <button onclick="bookTicket('Avengers')">
+                Book Now
+            </button>
+
+        </div>
+
+        <!-- Movie 2 -->
+        <div class="card">
+
+            <img src="https://images.unsplash.com/photo-1517604931442-7e0c8ed2963c">
+
+            <h2>Inception</h2>
+
+            <p>Price: ₹300</p>
+
+            <button onclick="bookTicket('Inception')">
+                Book Now
+            </button>
+
+        </div>
+
+        <!-- Movie 3 -->
+        <div class="card">
+
+            <img src="https://images.unsplash.com/photo-1536440136628-849c177e76a1">
+
+            <h2>Interstellar</h2>
+
+            <p>Price: ₹350</p>
+
+            <button onclick="bookTicket('Interstellar')">
+                Book Now
+            </button>
+
+        </div>
+
+    </div>
+
+    <!-- Booking Message -->
+    <div id="message"></div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

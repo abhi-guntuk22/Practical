@@ -1,0 +1,34 @@
+# STEP 1: Create folder
+mkdir docker-assignment
+
+# STEP 2: Go inside folder
+cd docker-assignment
+
+# STEP 3: Create Dockerfile
+notepad Dockerfile
+
+
+
+--Paste this inside Dockerfile and save:
+
+FROM node:18
+
+WORKDIR /app
+
+RUN echo "console.log('Hello from Docker Container'); setInterval(()=>{},1000);" > app.js
+
+CMD ["node", "app.js"]
+
+
+
+# STEP 4: Start Docker Desktop manually from Windows search
+# Wait until "Docker is running"
+
+# STEP 5: Build Docker image
+docker build -t my-app .
+
+# STEP 6: Show Docker images
+docker images
+
+# STEP 7: Run Docker container
+docker run my-app

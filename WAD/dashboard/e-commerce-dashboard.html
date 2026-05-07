@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>E-Commerce Dashboard</title>
+
+<style>
+
+body{
+    margin:0;
+    font-family:Arial, sans-serif;
+    background:#f8f9fa;
+}
+
+.navbar{
+    background:#222;
+    color:white;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 20px;
+}
+
+.navbar input{
+    padding:8px;
+}
+
+.navbar button{
+    padding:8px 12px;
+    background:#28a745;
+    border:none;
+    color:white;
+}
+
+.products{
+    display:flex;
+    gap:20px;
+    flex-wrap:wrap;
+    padding:20px;
+}
+
+.card{
+    background:white;
+    width:250px;
+    padding:15px;
+    border-radius:10px;
+    box-shadow:0px 0px 10px gray;
+    text-align:center;
+}
+
+.card img{
+    width:100%;
+    border-radius:10px;
+}
+
+.card button{
+    padding:10px;
+    background:#007bff;
+    color:white;
+    border:none;
+    margin-top:10px;
+    cursor:pointer;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="navbar">
+
+    <h2>🛒 ShopEasy</h2>
+
+    <div>
+        <input type="text" placeholder="Search Products">
+        <button>Search</button>
+    </div>
+
+</div>
+
+<h2 style="padding-left:20px;">Products</h2>
+
+<div class="products">
+
+    <div class="card">
+
+        <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9">
+
+        <h3>Smart Phone</h3>
+
+        <p>₹25,000</p>
+
+        <button>Buy Now</button>
+
+    </div>
+
+    <div class="card">
+
+        <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30">
+
+        <h3>Smart Watch</h3>
+
+        <p>₹5,000</p>
+
+        <button>Buy Now</button>
+
+    </div>
+
+    <div class="card">
+
+        <img src="https://images.unsplash.com/photo-1517336714739-489689fd1ca8">
+
+        <h3>Laptop</h3>
+
+        <p>₹55,000</p>
+
+        <button>Buy Now</button>
+
+    </div>
+
+</div>
+
+</body>
+</html>

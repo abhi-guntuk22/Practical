@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>City Ride Car Rentals</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Animate CSS -->
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+    <style>
+
+        body{
+            font-family: Arial, sans-serif;
+            background-color: #f5f7fa;
+        }
+
+        /* Hero Section */
+        .hero{
+            background: linear-gradient(to right, #1d3557, #457b9d);
+            color: white;
+            text-align: center;
+            padding: 70px 20px;
+        }
+
+        .hero h1{
+            font-size: 50px;
+            font-weight: bold;
+        }
+
+        .hero p{
+            font-size: 20px;
+        }
+
+        /* Car Cards */
+        .car-card{
+            transition: transform 0.3s;
+        }
+
+        .car-card:hover{
+            transform: scale(1.05);
+        }
+
+        /* Footer */
+        footer{
+            background-color: #212529;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            margin-top: 30px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+
+        <div class="container">
+
+            <a class="navbar-brand" href="#">
+                🚗 City Ride Car Rentals
+            </a>
+
+            <button class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav">
+
+                <span class="navbar-toggler-icon"></span>
+
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+
+                <ul class="navbar-nav ms-auto">
+
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">Home</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#cars">Cars</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#offers">Offers</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+    <!-- Header -->
+    <section class="hero animate__animated animate__fadeInDown">
+
+        <h1>Book Your Perfect Ride</h1>
+
+        <p>
+            Affordable • Comfortable • Fast Car Rental Services
+        </p>
+
+    </section>
+
+    <!-- Cars Section -->
+    <section class="container mt-5" id="cars">
+
+        <h2 class="text-center mb-4">Available Cars</h2>
+
+        <div class="row">
+
+            <!-- Car 1 -->
+            <div class="col-md-4 mb-4">
+
+                <div class="card car-card shadow">
+
+                    <img src="https://images.unsplash.com/photo-1502877338535-766e1452684a"
+                    class="card-img-top"
+                    height="250">
+
+                    <div class="card-body text-center">
+
+                        <h4>Sedan Car</h4>
+
+                        <p>
+                            Comfortable rides for family and business trips.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Car 2 -->
+            <div class="col-md-4 mb-4">
+
+                <div class="card car-card shadow">
+
+                    <img src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7"
+                    class="card-img-top"
+                    height="250">
+
+                    <div class="card-body text-center">
+
+                        <h4>Luxury Car</h4>
+
+                        <p>
+                            Premium luxury cars for special occasions.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Car 3 -->
+            <div class="col-md-4 mb-4">
+
+                <div class="card car-card shadow">
+
+                    <img src="https://images.unsplash.com/photo-1511919884226-fd3cad34687c"
+                    class="card-img-top"
+                    height="250">
+
+                    <div class="card-body text-center">
+
+                        <h4>SUV Car</h4>
+
+                        <p>
+                            Spacious SUVs perfect for long drives and tours.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Offers Button -->
+    <section class="text-center mt-5" id="offers">
+
+        <button class="btn btn-primary btn-lg"
+        onclick="showOffers()">
+
+            View Offers & Charges
+
+        </button>
+
+    </section>
+
+    <!-- Offer Information -->
+    <div class="container mt-4 text-center">
+
+        <div id="offerInfo"></div>
+
+    </div>
+
+    <!-- Footer -->
+    <footer id="contact">
+
+        <p>
+            📍 Nashik City | 📞 +91 9876543210 | ✉ cityride@gmail.com
+        </p>
+
+        <p>
+            © 2026 City Ride Car Rentals | All Rights Reserved
+        </p>
+
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+
+        function showOffers(){
+
+            document.getElementById("offerInfo").innerHTML = `
+
+                <div class="alert alert-primary">
+
+                    <h4>Special Offers & Charges</h4>
+
+                    <p>🚗 Sedan Car - ₹1500/day</p>
+
+                    <p>✨ Luxury Car - ₹4000/day</p>
+
+                    <p>🚙 SUV Car - ₹2500/day</p>
+
+                    <p>🎉 15% Discount on Weekend Booking</p>
+
+                </div>
+
+            `;
+        }
+
+    </script>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

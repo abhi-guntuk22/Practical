@@ -1,0 +1,66 @@
+# =========================
+# ASSIGNMENT 25
+# GitHub Repository Creation + Push Code
+# =========================
+
+# STEP 1: Create project folder
+mkdir github-practical
+
+# STEP 2: Go inside folder
+cd github-practical
+
+# STEP 3: Create sample file
+echo Hello GitHub > index.txt
+
+# STEP 4: Initialize Git
+git init
+
+# STEP 5: Add files
+git add .
+
+# STEP 6: Commit files
+git commit -m "First Commit"
+
+# STEP 7: Connect GitHub Repository
+# (Replace YOUR_REPO_LINK with your GitHub repo URL)
+
+git remote add origin YOUR_REPO_LINK
+
+# Example:
+# git remote add origin https://github.com/vivekpasare/github-practical.git
+
+# STEP 8: Push code to GitHub
+git push -u origin master
+
+
+# =========================
+# ASSIGNMENT 26
+# Git Push, Pull, Branch, Merge
+# =========================
+
+# STEP 1: Create new branch
+git branch newbranch
+
+# STEP 2: Switch to new branch
+git checkout newbranch
+
+# STEP 3: Create new file in branch
+echo Branch File > branch.txt
+
+# STEP 4: Add branch file
+git add .
+
+# STEP 5: Commit branch changes
+git commit -m "Branch Commit"
+
+# STEP 6: Switch back to master branch
+git checkout master
+
+# STEP 7: Merge new branch into master
+git merge newbranch
+
+# STEP 8: Pull latest changes from GitHub
+git pull origin master
+
+# STEP 9: Push merged code to GitHub
+git push origin master

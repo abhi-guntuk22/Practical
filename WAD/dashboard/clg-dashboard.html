@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>College Portal Dashboard</title>
+
+<style>
+
+body{
+    margin:0;
+    font-family: Arial, sans-serif;
+    background-color:#f4f6f9;
+}
+
+/* Navbar */
+.navbar{
+    background-color:#003566;
+    color:white;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 20px;
+}
+
+.navbar input{
+    padding:8px;
+    width:220px;
+}
+
+.navbar button{
+    padding:8px 12px;
+    background-color:#00b4d8;
+    border:none;
+    color:white;
+    cursor:pointer;
+}
+
+/* Sidebar */
+.container{
+    display:flex;
+}
+
+.sidebar{
+    width:220px;
+    background-color:#14213d;
+    height:100vh;
+    color:white;
+    padding:20px;
+}
+
+.sidebar ul{
+    list-style:none;
+    padding:0;
+}
+
+.sidebar li{
+    margin:20px 0;
+}
+
+/* Main */
+.main{
+    flex:1;
+    padding:20px;
+}
+
+.cards{
+    display:flex;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.card{
+    background:white;
+    padding:20px;
+    width:200px;
+    border-radius:10px;
+    box-shadow:0px 0px 10px gray;
+    text-align:center;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- Navbar -->
+<div class="navbar">
+
+    <h2>🎓 College Portal</h2>
+
+    <div>
+        <input type="text" placeholder="Search">
+        <button>Search</button>
+    </div>
+
+</div>
+
+<div class="container">
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+
+        <h3>Menu</h3>
+
+        <ul>
+            <li>Dashboard</li>
+            <li>Students</li>
+            <li>Teachers</li>
+            <li>Courses</li>
+            <li>Exams</li>
+        </ul>
+
+    </div>
+
+    <!-- Main Content -->
+    <div class="main">
+
+        <h2>College Dashboard</h2>
+
+        <div class="cards">
+
+            <div class="card">
+                <h3>1200</h3>
+                <p>Students</p>
+            </div>
+
+            <div class="card">
+                <h3>85</h3>
+                <p>Teachers</p>
+            </div>
+
+            <div class="card">
+                <h3>40</h3>
+                <p>Courses</p>
+            </div>
+
+            <div class="card">
+                <h3>12</h3>
+                <p>Departments</p>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>

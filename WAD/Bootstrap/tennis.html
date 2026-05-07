@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+    content="width=device-width, initial-scale=1.0">
+
+    <title>All About Tennis</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+    rel="stylesheet">
+
+    <style>
+
+        body{
+            font-family: Arial, sans-serif;
+            background-color: #f4fff0;
+        }
+
+        /* Hero Section */
+        .hero{
+            background: linear-gradient(to right, #2e8b57, #66bb6a);
+            color: white;
+            text-align: center;
+            padding: 70px 20px;
+        }
+
+        .hero h1{
+            font-size: 50px;
+            font-weight: bold;
+        }
+
+        .hero p{
+            font-size: 20px;
+        }
+
+        /* Player Cards */
+        .player-card{
+            transition: transform 0.3s;
+        }
+
+        .player-card:hover{
+            transform: scale(1.05);
+        }
+
+        /* Footer */
+        footer{
+            background-color: #212529;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            margin-top: 30px;
+        }
+
+    </style>
+
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+
+        <div class="container">
+
+            <a class="navbar-brand" href="#">
+                🎾 All About Tennis
+            </a>
+
+            <button class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav">
+
+                <span class="navbar-toggler-icon"></span>
+
+            </button>
+
+            <div class="collapse navbar-collapse"
+            id="navbarNav">
+
+                <ul class="navbar-nav ms-auto">
+
+                    <li class="nav-item">
+                        <a class="nav-link active"
+                        href="#">Home</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link"
+                        href="#players">Players</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link"
+                        href="#rules">Rules</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link"
+                        href="#schedule">Grand Slams</a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+    <!-- Header -->
+    <section class="hero">
+
+        <h1>Welcome to All About Tennis</h1>
+
+        <p>
+            Explore Players, Rules and Grand Slam Tournaments
+        </p>
+
+    </section>
+
+    <!-- Players Section -->
+    <section class="container mt-5" id="players">
+
+        <h2 class="text-center mb-4">
+            Famous Tennis Players
+        </h2>
+
+        <div class="row">
+
+            <!-- Player 1 -->
+            <div class="col-md-4 mb-4">
+
+                <div class="card player-card shadow">
+
+                    <img src="https://images.unsplash.com/photo-1542144582-1ba00456b5e3"
+                    class="card-img-top"
+                    height="250">
+
+                    <div class="card-body text-center">
+
+                        <h4>Roger Federer</h4>
+
+                        <button class="btn btn-success"
+                        onclick="showFederer()">
+
+                            View Achievements
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Player 2 -->
+            <div class="col-md-4 mb-4">
+
+                <div class="card player-card shadow">
+
+                    <img src="https://images.unsplash.com/photo-1517649763962-0c623066013b"
+                    class="card-img-top"
+                    height="250">
+
+                    <div class="card-body text-center">
+
+                        <h4>Rafael Nadal</h4>
+
+                        <button class="btn btn-warning"
+                        onclick="showNadal()">
+
+                            View Achievements
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Player 3 -->
+            <div class="col-md-4 mb-4">
+
+                <div class="card player-card shadow">
+
+                    <img src="https://images.unsplash.com/photo-1554068865-24cecd4e34b8"
+                    class="card-img-top"
+                    height="250">
+
+                    <div class="card-body text-center">
+
+                        <h4>Novak Djokovic</h4>
+
+                        <button class="btn btn-primary"
+                        onclick="showDjokovic()">
+
+                            View Achievements
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Achievement Display -->
+    <div class="container mt-4 text-center">
+
+        <div id="achievementInfo"></div>
+
+    </div>
+
+    <!-- Rules Section -->
+    <section class="container mt-5" id="rules">
+
+        <h2 class="text-center mb-4">
+            Basic Rules of Tennis
+        </h2>
+
+        <div class="card shadow p-4">
+
+            <ul>
+
+                <li>
+                    A tennis match is played between two or four players.
+                </li>
+
+                <li>
+                    Players use rackets to hit the ball over the net.
+                </li>
+
+                <li>
+                    A player must win at least 6 games to win a set.
+                </li>
+
+                <li>
+                    Matches are usually played in best of 3 or 5 sets.
+                </li>
+
+                <li>
+                    The ball must land inside the court boundary lines.
+                </li>
+
+            </ul>
+
+        </div>
+
+    </section>
+
+    <!-- Grand Slam Schedule -->
+    <section class="container mt-5" id="schedule">
+
+        <h2 class="text-center mb-4">
+            Grand Slam Schedule
+        </h2>
+
+        <div class="table-responsive">
+
+            <table class="table table-bordered table-striped">
+
+                <thead class="table-success">
+
+                    <tr>
+
+                        <th>Tournament</th>
+                        <th>Country</th>
+                        <th>Month</th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody>
+
+                    <tr>
+                        <td>Australian Open</td>
+                        <td>Australia</td>
+                        <td>January</td>
+                    </tr>
+
+                    <tr>
+                        <td>French Open</td>
+                        <td>France</td>
+                        <td>May - June</td>
+                    </tr>
+
+                    <tr>
+                        <td>Wimbledon</td>
+                        <td>England</td>
+                        <td>July</td>
+                    </tr>
+
+                    <tr>
+                        <td>US Open</td>
+                        <td>USA</td>
+                        <td>August - September</td>
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </section>
+
+    <!-- Footer -->
+    <footer>
+
+        <p>
+            🎾 All About Tennis | Learn • Play • Enjoy
+        </p>
+
+        <p>
+            © 2026 Tennis World
+        </p>
+
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+
+        function showFederer(){
+
+            document.getElementById("achievementInfo").innerHTML = `
+
+                <div class="alert alert-success">
+
+                    <h4>Roger Federer Achievements</h4>
+
+                    <p>🏆 20 Grand Slam Titles</p>
+
+                    <p>🥇 Olympic Gold Medalist</p>
+
+                    <p>🎾 Wimbledon Champion - 8 Times</p>
+
+                </div>
+
+            `;
+        }
+
+        function showNadal(){
+
+            document.getElementById("achievementInfo").innerHTML = `
+
+                <div class="alert alert-warning">
+
+                    <h4>Rafael Nadal Achievements</h4>
+
+                    <p>🏆 22 Grand Slam Titles</p>
+
+                    <p>🎾 French Open Champion - 14 Times</p>
+
+                    <p>🥇 Olympic Gold Medalist</p>
+
+                </div>
+
+            `;
+        }
+
+        function showDjokovic(){
+
+            document.getElementById("achievementInfo").innerHTML = `
+
+                <div class="alert alert-primary">
+
+                    <h4>Novak Djokovic Achievements</h4>
+
+                    <p>🏆 24 Grand Slam Titles</p>
+
+                    <p>🥇 Multiple ATP Finals Winner</p>
+
+                    <p>🎾 World No.1 for Record Weeks</p>
+
+                </div>
+
+            `;
+        }
+
+    </script>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

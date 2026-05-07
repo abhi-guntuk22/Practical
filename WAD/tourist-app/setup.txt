@@ -1,0 +1,18 @@
+4 commands you MUST memorize for exam
+bash# 1. Create project folder
+mkdir P14
+cd p14
+
+
+# 2. Initialize node project (creates package.json)
+npm init -y
+
+# 3. Install express
+npm install express
+
+# 4. Run the server
+node server.js
+
+
+Then open browser and go to:
+http://localhost:3000

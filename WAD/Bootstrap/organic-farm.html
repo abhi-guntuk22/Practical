@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Green Nature Organic Farm</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Animate CSS -->
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+    <style>
+
+        body{
+            font-family: Arial, sans-serif;
+            background-color: #f3fff3;
+        }
+
+        /* Header */
+        .hero{
+            background: linear-gradient(to right, #2e7d32, #66bb6a);
+            color: white;
+            text-align: center;
+            padding: 70px 20px;
+        }
+
+        .hero h1{
+            font-size: 50px;
+            font-weight: bold;
+        }
+
+        .hero p{
+            font-size: 20px;
+        }
+
+        /* Cards */
+        .farm-card{
+            transition: transform 0.3s;
+        }
+
+        .farm-card:hover{
+            transform: scale(1.05);
+        }
+
+        /* Footer */
+        footer{
+            background-color: #1b4332;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            margin-top: 30px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-success">
+
+        <div class="container">
+
+            <a class="navbar-brand" href="#">
+                🌿 Green Nature Organic Farm
+            </a>
+
+            <button class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav">
+
+                <span class="navbar-toggler-icon"></span>
+
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+
+                <ul class="navbar-nav ms-auto">
+
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">Home</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#services">Products</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#offers">Offers</a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+    <!-- Header -->
+    <section class="hero animate__animated animate__fadeInDown">
+
+        <h1>Welcome to Green Nature Organic Farm</h1>
+
+        <p>
+            Fresh • Healthy • Natural Products
+        </p>
+
+    </section>
+
+    <!-- Products Section -->
+    <section class="container mt-5" id="services">
+
+        <h2 class="text-center mb-4">Our Organic Products</h2>
+
+        <div class="row">
+
+            <!-- Product 1 -->
+            <div class="col-md-4 mb-4">
+
+                <div class="card farm-card shadow">
+
+                    <img src="https://images.unsplash.com/photo-1542838132-92c53300491e"
+                    class="card-img-top"
+                    height="250">
+
+                    <div class="card-body text-center">
+
+                        <h4>Fresh Vegetables</h4>
+
+                        <p>
+                            Naturally grown vegetables without harmful chemicals.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Product 2 -->
+            <div class="col-md-4 mb-4">
+
+                <div class="card farm-card shadow">
+
+                    <img src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6"
+                    class="card-img-top"
+                    height="250">
+
+                    <div class="card-body text-center">
+
+                        <h4>Organic Fruits</h4>
+
+                        <p>
+                            Fresh seasonal fruits directly from our organic farms.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Product 3 -->
+            <div class="col-md-4 mb-4">
+
+                <div class="card farm-card shadow">
+
+                    <img src="https://images.unsplash.com/photo-1471193945509-9ad0617afabf"
+                    class="card-img-top"
+                    height="250">
+
+                    <div class="card-body text-center">
+
+                        <h4>Dairy Products</h4>
+
+                        <p>
+                            Pure organic milk, butter and cheese products.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Offers Button -->
+    <section class="text-center mt-5" id="offers">
+
+        <button class="btn btn-success btn-lg"
+        onclick="showOffers()">
+
+            View Offers & Charges
+
+        </button>
+
+    </section>
+
+    <!-- Offer Information -->
+    <div class="container mt-4 text-center">
+
+        <div id="offerInfo"></div>
+
+    </div>
+
+    <!-- Footer -->
+    <footer>
+
+        <p>
+            © 2026 Green Nature Organic Farm | Healthy Living Starts Here
+        </p>
+
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+
+        function showOffers(){
+
+            document.getElementById("offerInfo").innerHTML = `
+
+                <div class="alert alert-success">
+
+                    <h4>Special Offers & Charges</h4>
+
+                    <p>🥬 Fresh Vegetables Combo - ₹499</p>
+
+                    <p>🍎 Organic Fruit Basket - ₹699</p>
+
+                    <p>🥛 Dairy Products Pack - ₹399</p>
+
+                    <p>🎉 20% Discount on orders above ₹2000</p>
+
+                </div>
+
+            `;
+        }
+
+    </script>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

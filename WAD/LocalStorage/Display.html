@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Users Data</title>
+
+  <style>
+    body {
+      font-family: Arial;
+      background-color: #eef;
+    }
+    .container {
+      width: 80%;
+      margin: 30px auto;
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    th, td {
+      border: 1px solid gray;
+      padding: 10px;
+      text-align: center;
+    }
+    th {
+      background-color: #333;
+      color: white;
+    }
+    button {
+      margin-top: 15px;
+      padding: 10px;
+      background-color: green;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="container">
+  <h2>User Data</h2>
+
+  <table>
+    <thead>
+      <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>DOB</th>
+        <th>Gender</th>
+        <th>Mobile</th>
+        <th>Email</th>
+      </tr>
+    </thead>
+    <tbody id="user-list"></tbody>
+  </table>
+
+  <button onclick="loadData()">Load Users</button>
+</div>
+
+<script>
+function loadData(){
+  const list = document.getElementById("user-list");
+  list.innerHTML = ""; // clear previous data
+
+  const users = JSON.parse(localStorage.getItem("users")) || [];
+
+  users.forEach(user => {
+    const row = `
+      <tr>
+        <td>${user.fname}</td>
+        <td>${user.lname}</td>
+        <td>${user.dob}</td>
+        <td>${user.gender}</td>
+        <td>${user.mobile}</td>
+        <td>${user.email}</td>
+      </tr>
+    `;
+    list.innerHTML += row;
+  });
+}
+</script>
+
+</body>
+</html>
