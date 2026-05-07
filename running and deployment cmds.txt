@@ -1,5 +1,5 @@
 for node problem stat
-npm I
+npm i
 node server.js
 
 for angular
